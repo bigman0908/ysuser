@@ -25,6 +25,5 @@ app.use(router)
 app.mixin(mixins)
 app.use(store)
 app.use(VueSweetalert2)
-//app.use(vagas);
 app.use(CKEditor).mount(/* DOM element */)
 app.mount('#app')
