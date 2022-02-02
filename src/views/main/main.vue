@@ -1,0 +1,193 @@
+<template>
+<div class="wrap">
+  			<!-- 상단영역 -->
+			<div class="header">
+				<dl>
+					<dt>
+						<a href="../main/index.html"><img src="../../assets/images/logo_black.svg" alt="" title="" /></a>
+					</dt>
+					<dd>
+						<a href="../about/about.html">학원소개</a>
+						<a href="../education/education.html">교육안내</a>
+						<a href="../exam/exam.html">시험안내</a>
+						<a href="../gallery/gallery.html">갤러리</a>
+						<a href="../qna/qna.html">질문과답변</a>
+					</dd>
+					<dt>
+						<a href="#" id="tmOpen"><i class="uil uil-align-right"></i></a>
+					</dt>
+				</dl>
+			</div>
+			<!-- 상단영역 끝 -->
+
+
+			<!-- 전체메뉴 -->
+			<div class="header-total">
+				<ul>
+					<li>
+						<p><a href="../about/about.html">학원소개</a></p>
+					</li>
+					<li>
+						<p><a href="../education/education.html">교육안내</a></p>
+					</li>
+					<li>
+						<p><a href="../exam/exam.html">시험안내</a></p>
+					</li>
+					<li>
+						<p><a href="../gallery/gallery.html">갤러리</a></p>
+					</li>
+					<li>
+						<p><a href="../qna/qna.html">질문과답변</a></p>
+					</li>
+					<li>
+						<h2><a href="#" id="tmClose"><i class="uil uil-times"></i></a></h2>
+					</li>
+				</ul>
+			</div>
+			<!-- 전체메뉴 끝 -->
+
+
+			<!-- 상단영역 - 모바일 -->
+			<div class="header-mobile">
+				<dl class="gnb-header">
+					<dt><i class="uil uil-align-left" id="mobileLnbOpen"></i></dt>
+					<dd><a href="../main/index.html"><img src="../../assets/images/logo_black.svg" height="22" alt="" title="" /></a></dd>
+					<dt onclick="location.href='../contact/contact.html';"><i class="uil uil-comments-alt"></i></dt>
+				</dl>
+				<div class="gnbMenu">
+					<dl>
+						<dt>Menu</dt>
+						<dd id="mobileLnbClose"><i class="fa fa-times" aria-hidden="true"></i></dd>
+					</dl>
+					<ul>
+						<li><a href='../about/about.html'><i class="uil uil-estate"></i> 학원소개</a></li>
+						<li><a href='../education/education.html'><i class="uil uil-notebooks"></i> 교육안내</a></li>
+						<li><a href='../exam/exam.html'><i class="uil uil-file-bookmark-alt"></i> 시험안내</a></li>
+						<li><a href='../gallery/gallery.html'><i class="uil uil-images"></i> 갤러리</a></li>
+						<li><a href='../qna/qna.html'><i class="uil uil-comments-alt"></i> 질문과답변</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- 상단영역 - 모바일 끝 -->
+
+
+			<div class="container">
+
+
+				<!-- 비주얼영역 -->
+				<div class="main-vegas" style=""> 
+          <img src="../../assets/images/main_visual_img01.jpg"/> 
+					<div class="mv-copy">
+						<h2>연세간호학원</h2>
+						<h3>Since 1993</h3>
+					</div>
+				</div>
+				<!-- 비주얼영역 끝 -->
+
+
+				<!-- 소개 -->
+				<div class="main-intro">
+					<div>
+						<h2>연세간호학원</h2>
+						<h3>새로운 가능성의 시작! 연세간호학원입니다.</h3>
+						<dl>
+							<dt><img src="../../assets/images/main_intro_img01.jpg" style="width:100%;" alt="" title="" /></dt>
+							<dd>연세간호학원에서<br />당신의 꿈을 응원합니다.</dd>
+						</dl>
+						<div>
+							조금은 조심스럽게, 조금은 두려운 마음으로 <strong>새로운 가능성에 도전하려고 하는 여러분!</strong><br />
+							아는 것만이 아닌, 할 수 있다는 자신감이 함께 할 때 비로소<br />
+							진정한 능력이라고 생각합니다.
+						</div>
+					</div>
+				</div>
+				<!-- 소개 끝 -->
+
+				<!-- 안내 -->
+				<div class="main-guide">
+					<ul>
+						<li>
+							<p><img src="../../assets/images/main_guide_img01.png" alt="" title="" /></p>
+							<h2>학원소개</h2>
+						</li>
+						<li>
+							<p><img src="../../assets/images/main_guide_img02.png" alt="" title="" /></p>
+							<h2>교육과정소개</h2>
+						</li>
+						<li>
+							<p><img src="../../assets/images/main_guide_img03.png" alt="" title="" /></p>
+							<h2>상담문의</h2>
+						</li>
+					</ul>
+				</div>
+				<!-- 안내 끝 -->
+
+
+				<!-- 주소 및 연락처 -->
+				<div class="main-addr">
+					<p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.958095358524!2d126.86097381621896!3d37.53248507980434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9c28d1d09c11%3A0x3054f75eb327c322!2z7ISc7Jq47Yq567OE7IucIOqwleyEnOq1rCDqs7Dri6zrnpjroZwgMjcx!5e0!3m2!1sko!2skr!4v1643391010670!5m2!1sko!2skr" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe></p>
+					<ul>
+						<li>주소 및 연락처</li>
+						<li>
+							<i class="uil uil-map-marker"></i> 서울시 강서구 곰달래로 271 성림빌딩4층(화곡동,목동사거리) 연세간호학원
+						</li>
+						<li>
+							<i class="uil uil-phone-volume"></i> 02-2644-9001<br />
+							<i class="uil uil-print"></i> 02-2648-6603
+						</li>
+					</ul>
+				</div>
+				<!-- 주소 및 연락처 끝 -->
+
+
+				<!-- 하단영역 -->
+				<div class="footer">
+					<ul>
+						<li>
+							<a href="../main/"><img src="../../assets/images/logo_white.svg" width="150" alt="" title="" /></a>
+						</li>
+						<li>
+							업체명 : 연세간호학원 &nbsp;&nbsp; 대표 : 김옥순 &nbsp;&nbsp; 사업자등록번호 : 109-90-63564<br />
+							주소 : 서울시 강서구 곰달래로 271 성림빌딩4층 (화곡동, 목동사거리)<br />
+							대표전화번호 : 02-2644-9001 &nbsp;&nbsp; 팩스 : 02-2648-6603 &nbsp;&nbsp; 이메일 : ys2644-9001@hanmail.net<br />
+							Copyright(c) Yonsel Nursing Academy.Co., Ltd. All Right Reserved.
+						</li>
+						<li>
+							<a href="#"><i class="uil uil-angle-up"></i></a>
+						</li>
+					</ul>
+				</div>
+				<!-- 하단영역 끝 -->
+
+
+			</div>
+</div>
+</template>
+<script>
+export default {
+  
+  name: 'main',
+  data () {
+    return {
+      imgWidth: '0',
+      sliders : [],
+      animation : "random",
+      delay : 7000
+    }
+  },
+  created() {
+    this.imgWidth = "100%"
+    console.log("여기왜 안찍힘??==="+this.imgWidth);
+  },
+  mounted() {
+    setTimeout(() => {
+      this.imgWidth = "120"
+    },500);
+    let options = [];
+    //options.push({"slides":[{"src":"../../assets/images/main_visual_img01.jpg"},{"src":"../../assets/images/main_visual_img02.jpg"},{"src":"../../assets/images/main_visual_img03.jpg"}],"animation":"kenburns","delay":7000});
+    //let _vegas = new Vegas(this, options);
+    console.log("여기왜 안찍힘2222==="+this.imgWidth);
+
+  }
+}
+</script>
