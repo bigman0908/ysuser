@@ -1,12 +1,19 @@
 <template>
 <div class="wrap">
 	<!-- 비주얼 영역 -->
-  <div class="visual-sub-vagas no-menu">
+  <!--<div class="visual-sub-vagas no-menu">
     <img src="../../assets/images/visual_sub01.jpg"/>
     <dl class="vsv-copy">
       <dt><a href="/main"><i class="uil uil-angle-left-b"></i></a></dt>
       <dd>학원소개</dd>
       <dt><a href="/education"><i class="uil uil-angle-right-b"></i></a></dt>
+    </dl>
+  </div> -->
+  <div class="visual-sub vs-bg01">
+    <dl class="vs-copy">
+      <dt><a href="/main"><i class="uil uil-angle-left-b"></i></a></dt>
+      <dd>학원소개</dd>
+      <dt><a href="../education"><i class="uil uil-angle-right-b"></i></a></dt>
     </dl>
   </div>
   <!-- 비주얼 영역 끝 -->

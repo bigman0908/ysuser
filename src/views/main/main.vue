@@ -2,13 +2,19 @@
 <div class="wrap">  
   <div class="container">
     <!-- 비주얼영역 -->
-    <div class="main-vegas">
+    <!--<div class="main-vegas">
       <img src="../../assets/images/main_visual_img01.jpg"/> 
       <div class="mv-copy">
         <h2>연세간호학원</h2>
         <h3>Since 1993</h3>
       </div>
-    </div>
+    </div> -->
+    <div class="main-visual mv-bg01">
+      <div class="mv-copy">
+        <h2>연세간호학원</h2>
+        <h3>Since 1993</h3>
+      </div>
+    </div> 
     <!-- 비주얼영역 끝 -->
 
 

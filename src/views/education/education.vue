@@ -1,8 +1,15 @@
 <template>
   <!-- 비주얼 영역 -->
-  <div class="visual-sub-vagas no-menu">
+  <!-- <div class="visual-sub-vagas no-menu">
     <img src="../../assets/images/visual_sub02.jpg"/>
     <dl class="vsv-copy">
+      <dt><a href="/about"><i class="uil uil-angle-left-b"></i></a></dt>
+      <dd>교육안내</dd>
+      <dt><a href="/exam"><i class="uil uil-angle-right-b"></i></a></dt>
+    </dl>
+  </div> -->
+  <div class="visual-sub vs-bg02">
+    <dl class="vs-copy">
       <dt><a href="/about"><i class="uil uil-angle-left-b"></i></a></dt>
       <dd>교육안내</dd>
       <dt><a href="/exam"><i class="uil uil-angle-right-b"></i></a></dt>

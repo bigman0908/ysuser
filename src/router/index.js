@@ -6,6 +6,8 @@ import Main from '../views/main/main.vue'
 import About from '../views/about/about.vue'
 import Education from '../views/education/education.vue'
 import Exam from '../views/exam/exam.vue'
+import GalleryList from '../views/gallery/galleryList.vue'
+import GalleryView from '../views/gallery/galleryView.vue'
 
 const routes = [
   {
@@ -32,6 +34,16 @@ const routes = [
     path: '/exam',
     name: 'exam',
     component: Exam
+  },
+  {
+    path: '/gallery',
+    name: 'galleryList',
+    component: GalleryList
+  },
+  {
+    path: '/galleryView',
+    name: 'galleryView',
+    component: GalleryView
   }
 ]
 

@@ -139,6 +139,42 @@
 
 
 /* 공통  /////////////////////////////////////////////////////////////////////////*/
+/* 서브 비주얼 영역 */
+.visual-sub {position:relative; width:100%; height:400px;}
+.visual-sub.vs-bg01 { background:url('../images/visual_sub01.jpg') center no-repeat; background-size:cover;}
+.visual-sub.vs-bg02 { background:url('../images/visual_sub02.jpg') center no-repeat; background-size:cover;}
+.visual-sub.vs-bg03 { background:url('../images/visual_sub03.jpg') center no-repeat; background-size:cover;}
+.visual-sub.vs-bg04 { background:url('../images/visual_sub04.jpg') center no-repeat; background-size:cover;}
+.visual-sub.vs-bg05 { background:url('../images/visual_sub05.jpg') center no-repeat; background-size:cover;}
+.visual-sub.vs-bg06 { background:url('../images/visual_sub05.jpg') center no-repeat; background-size:cover;}
+.visual-sub .vs-copy {display:flex; justify-content:space-between; align-items:center; position:absolute; left:50%; top:0; width:1200px; margin:200px 0 0 -600px; text-align:center;}
+.visual-sub .vs-copy dt a {display:flex; justify-content:center; align-items:center; width:100px; height:80px; text-align:center; font-size:40px; line-height:40px; color:#fff; background:rgba(255,255,255,0.2);}
+.visual-sub .vs-copy dd {font-weight:700; font-size:55px; line-height:55px; color:#fff;}
+
+@media all and (max-width:479px) {
+  .visual-sub {height:250px;}
+  .visual-sub .vs-copy {width:92%; margin:130px 0 0 -46%;}
+  .visual-sub .vs-copy dt a {width:40px; height:40px; font-size:26px; line-height:26px;}
+  .visual-sub .vs-copy dd {font-size:35px; line-height:35px;}
+}
+@media all and (min-width:480px) and (max-width:767px) {
+  .visual-sub {height:250px;}
+  .visual-sub .vs-copy {width:92%; margin:130px 0 0 -46%;}
+  .visual-sub .vs-copy dt a {width:40px; height:40px; font-size:26px; line-height:26px;}
+  .visual-sub .vs-copy dd {font-size:35px; line-height:35px;}
+}
+@media all and (min-width:768px) and (max-width:991px) {
+  .visual-sub {height:300px;}
+  .visual-sub .vs-copy {width:750px; margin:140px 0 0 -375px;}
+}
+@media all and (min-width:992px) and (max-width:1199px) {
+  .visual-sub .vs-copy {width:970px; margin:200px 0 0 -485px;}
+}
+@media all and (min-width:1200px) {
+
+}
+
+
 /* 서브 비주얼 영역 - 베가스 */
 .visual-sub-vagas {position:relative; width:100%; height:400px;}
 .visual-sub-vagas .vsv-copy {display:flex; justify-content:space-between; align-items:center; position:absolute; left:50%; top:0; width:1200px; margin:200px 0 0 -600px; text-align:center;}
@@ -224,8 +260,40 @@
 
 
 /* 메인  //////////////////////////////////////////////////*/
+/* 비주얼 영역 */
+.main-visual {position:relative; height:700px;}
+.main-visual.mv-bg01 {background:url('../images/main_visual_img01.jpg') center no-repeat; background-size:cover;}
+.main-visual .mv-copy {position:absolute; top:50%; left:50%; width:1200px; margin:-40px 0 0 -600px; text-align:center;}
+.main-visual .mv-copy h2 {font-weight:600; font-size:50px; line-height:50px; color:#fff; text-shadow:0 2px 4px rgba(0,0,0,0.3); opacity:0.9;}
+.main-visual .mv-copy h3 {margin-top:25px; font-weight:700; font-size:90px; line-height:90px; color:#fff; letter-spacing:-1px; text-shadow:0 2px 4px rgba(0,0,0,0.3); opacity:0.9;}
+
+@media all and (max-width:479px) {
+  .main-visual {height:400px;}
+  .main-visual .mv-copy {width:90%; margin:-10px 0 0 -45%;}
+  .main-visual .mv-copy h2 {font-size:22px; line-height:22px;}
+  .main-visual .mv-copy h3 {margin-top:10px; font-size:40px; line-height:45px;}
+}
+@media all and (min-width:480px) and (max-width:767px) {
+  .main-visual {height:400px;}
+  .main-visual .mv-copy {width:470px; margin:-10px 0 0 -235px;}
+  .main-visual .mv-copy h2 {font-size:22px; line-height:22px;}
+  .main-visual .mv-copy h3 {margin-top:10px; font-size:40px; line-height:45px;}
+}
+@media all and (min-width:768px) and (max-width:991px) {
+  .main-visual .mv-copy {width:750px; margin:-40px 0 0 -375px;}
+  .main-visual .mv-copy h2 {font-size:30px; line-height:30px;}
+  .main-visual .mv-copy h3 {margin-top:25px; font-size:55px; line-height:55px;}
+}
+@media all and (min-width:992px) and (max-width:1199px) {
+  .main-visual .mv-copy {width:970px; margin:-40px 0 0 -485px;}
+}
+@media all and (min-width:1200px) {
+
+}
+
+
 /* 비주얼 영역 - 베가스 */
-.main-vegas {height:700px;}
+/* .main-vegas {height:700px;}
 .main-vegas .mv-copy {position:absolute; top:50%; left:50%; width:1200px; margin:-60px 0 0 -600px; text-align:center;}
 .main-vegas .mv-copy h2 {font-weight:600; font-size:50px; line-height:50px; color:#fff; text-shadow:0 2px 4px rgba(0,0,0,0.3); opacity:0.9;}
 .main-vegas .mv-copy h3 {margin-top:25px; font-weight:700; font-size:90px; line-height:90px; color:#fff; letter-spacing:-1px; text-shadow:0 2px 4px rgba(0,0,0,0.3); opacity:0.9;}
@@ -252,7 +320,7 @@
 }
 @media all and (min-width:1200px) {
 
-}
+} */
 
 
 /* 소개 */
@@ -730,6 +798,9 @@
 .board-view > h2 {font-weight:600; font-size:22px; line-height:30px; color:#222;}
 .board-view > h2 span {color:#8950fc;}
 .board-view > h3 {margin-top:10px; font-size:12px; line-height:12px; color:#222;}
+.board-view > h4 {margin-top:15px; padding:12px 15px; border:#e9e9e9 1px solid; border-radius:5px;}
+.board-view > h4 a {display:inline-block; margin-right:20px; font-size:13px; line-height:13px; color:#222;}
+.board-view > h4 a:hover {color:#500A87;}
 .board-view > div {margin-top:30px;}
 .board-view > p {margin-top:30px; padding-top:30px; text-align:center; border-top:#e9e9e9 1px solid;}
 .board-view > p a {width:150px;}
