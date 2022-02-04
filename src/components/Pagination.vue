@@ -77,6 +77,8 @@ export default {
       const pgInfo = []
       pgInfo.push(start)
       pgInfo.push(end)
+      pgInfo.push(currentPage)
+      pgInfo.push(endIndex)      
       this.$emit('paging-list', pgInfo) // start, end 값 부모 페이지에 전달
 
       return {startIndex, endIndex, last}

@@ -8,6 +8,7 @@ import Education from '../views/education/education.vue'
 import Exam from '../views/exam/exam.vue'
 import GalleryList from '../views/gallery/galleryList.vue'
 import GalleryView from '../views/gallery/galleryView.vue'
+import QnaList from '../views/qna/qnaList.vue'
 
 const routes = [
   {
@@ -44,6 +45,11 @@ const routes = [
     path: '/galleryView',
     name: 'galleryView',
     component: GalleryView
+  },
+  {
+    path: '/qna',
+    name: 'qnaList',
+    component: QnaList
   }
 ]
 

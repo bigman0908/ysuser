@@ -18,8 +18,8 @@
     <!-- 타이틀 끝 -->
 
     <!-- 리스트 -->
-    <div class="gallery-list">
-      <ul v-if="pageList.length > 0">        
+    <div class="gallery-list" v-show="pageList.length > 0">
+      <ul>        
         <li :key="i" v-for="(gallery,i) in pageList" @click="goView(gallery.BOARD_SEQ);">
           <p>
             <img :src="`/download/images/${gallery.FILE_NM}`"  style="width:100%" alt="" title="" />
@@ -35,6 +35,11 @@
           </div>
         </li>        
       </ul>
+    </div>
+
+    <div class="board-list-no" v-show="pageList.length === 0">
+      <p><i class="uil uil-sync-exclamation"></i></p>
+      <h2>목록이 없습니다.</h2>
     </div>
     <!-- 리스트 끝 -->
     <!-- 페이징처리 -->

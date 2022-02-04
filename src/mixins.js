@@ -9,7 +9,7 @@ export default {
         data
       }).catch(e => {
         console.log(e)
-        this.$swal('처리 중 오류가 발생했습니다.', this.$router.push({ path: '/adminLogin' }))
+        this.$swal('처리 중 오류가 발생했습니다.', this.$router.push({ path: '/' }))
       })).data
     },
     $base64 (file) {
@@ -79,6 +79,19 @@ export default {
       }
 
       return prefix + currency + String(v) + String(d)
+    },
+    // 넘어온 값이 빈값인지 체크. 
+    // !value 하면 생기는 논리적 오류를 제거하기 위해 
+    // 명시적으로 value == 사용 // [], {} 도 빈값으로 처리 
+    $isEmpty(value){ 
+      if( value == "" || value == null || value == undefined 
+        || ( value != null && typeof value == "object" && !Object.keys(value).length ) )
+        { 
+          return true; 
+        }else{ 
+          return false; 
+        } 
     }
+
   }
 }
