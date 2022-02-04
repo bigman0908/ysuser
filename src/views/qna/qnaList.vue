@@ -52,7 +52,7 @@
         현재페이지 : <span>{{pageInfo}}</span>
       </dt>
       <dd>
-        <a href="/qnaWrite" class="btn-purple w80"><i class="uil uil-file-edit-alt"></i> 글쓰기</a>
+        <a @click="goRegist" class="btn-purple w80"><i class="uil uil-file-edit-alt"></i> 글쓰기</a>
       </dd>
     </dl>
     <!-- 리스트정보 끝 -->
@@ -118,8 +118,8 @@ export default {
                 console.log("error=="+e)
             }            
         },
-        goView(qna_seq) {
-            this.$router.push({path:'/qnaView', query:{qna_seq:qna_seq}}); 
+        goRegist(qna_seq) {
+            this.$router.push({path:'/qnaRegist', query:{qna_seq:qna_seq}}); 
         },
         
         listPagingSet(data){

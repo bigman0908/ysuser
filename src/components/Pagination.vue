@@ -3,7 +3,7 @@
   <div class="paging-list">
     <span>
       <a v-show="pageNum === 1" href="#"><i class="fas fa-caret-left"></i></a>
-      <a v-show="pageNum !== 1" href="" @click="prevPage"><i class="fas fa-caret-left"></i></a>
+      <a v-show="pageNum !== 1" @click="prevPage"><i class="fas fa-caret-left"></i></a>
     </span>
     <a :key="i" v-for="(i) in range(pageInfo.startIndex, pageInfo.endIndex)" @click="pageNum=i"  :class="[pageNum == i ? 'active' : '']">
       {{i}}        
