@@ -10,6 +10,7 @@ import GalleryList from '../views/gallery/galleryList.vue'
 import GalleryView from '../views/gallery/galleryView.vue'
 import QnaList from '../views/qna/qnaList.vue'
 import QnaRegist from '../views/qna/qnaRegist.vue'
+import QnaChk from '../views/qna/qnaChk.vue'
 
 const routes = [
   {
@@ -56,6 +57,16 @@ const routes = [
     path: '/qnaRegist',
     name: 'qnaRegist',
     component: QnaRegist
+  },
+  {
+    path: '/qnaUpdate',
+    name: 'qnaUpdate',
+    component: QnaRegist
+  },
+  {
+    path: '/qnaChk',
+    name: 'qnaChk',
+    component: QnaChk
   }
 ]
 

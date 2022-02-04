@@ -52,7 +52,7 @@
         현재페이지 : <span>{{pageInfo}}</span>
       </dt>
       <dd>
-        <a @click="goRegist" class="btn-purple w80"><i class="uil uil-file-edit-alt"></i> 글쓰기</a>
+        <a href="/qnaRegist" class="btn-purple w80;cursor:hand;"><i class="uil uil-file-edit-alt"></i> 글쓰기</a>
       </dd>
     </dl>
     <!-- 리스트정보 끝 -->
@@ -62,7 +62,7 @@
 
     <div class="board-list">
       <div v-show="qnaList.length > 0">
-        <ul :key="i" v-for="(qna,i) in pageList" onclick="location.href='qna_view.html';">
+        <ul :key="i" v-for="(qna,i) in pageList" @click="goQnaChk(qna.QNA_SEQ)">
           <li>{{qna.ROWNUM}}</li>          
           <li :class="[qna.LVL == '1' ? 'reply' : '']">
             <i v-show="qna.LVL == '1'" class="uil uil-corner-down-right"></i>
@@ -118,10 +118,9 @@ export default {
                 console.log("error=="+e)
             }            
         },
-        goRegist(qna_seq) {
-            this.$router.push({path:'/qnaRegist', query:{qna_seq:qna_seq}}); 
+        goQnaChk(qna_seq) {
+            this.$router.push({path:'/qnaChk', query:{qna_seq:qna_seq}}); 
         },
-        
         listPagingSet(data){
           this.pageList=this.qnaList.slice(data[0], data[1]);
           this.currentPage=data[2]
