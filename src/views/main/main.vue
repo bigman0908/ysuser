@@ -41,15 +41,15 @@
     <div class="main-guide">
       <ul>
         <li>
-          <p><img src="../../assets/images/main_guide_img01.png" alt="" title="" /></p>
+          <p><a href="/about"><img src="../../assets/images/main_guide_img01.png" alt="" title=""/></a></p>
           <h2>학원소개</h2>
         </li>
         <li>
-          <p><img src="../../assets/images/main_guide_img02.png" alt="" title="" /></p>
+          <p><a href="/education"><img src="../../assets/images/main_guide_img02.png" alt="" title=""/></a></p>
           <h2>교육과정소개</h2>
         </li>
         <li>
-          <p><img src="../../assets/images/main_guide_img03.png" alt="" title="" /></p>
+          <p><a href="/qna"><img src="../../assets/images/main_guide_img03.png" alt="" title=""/></a></p>
           <h2>상담문의</h2>
         </li>
       </ul>
