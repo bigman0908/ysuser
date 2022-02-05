@@ -2,18 +2,13 @@
   <!-- 비주얼 영역 -->
   <div class="visual-sub vs-bg05">
     <dl class="vs-copy">
-      <dt><a href="../gallery/gallery.html"><i class="uil uil-angle-left-b"></i></a></dt>
+      <dt><a href="/gallery"><i class="uil uil-angle-left-b"></i></a></dt>
       <dd>질문과답변</dd>
-      <dt><a href="../main/index.html"><i class="uil uil-angle-right-b"></i></a></dt>
+      <dt><a href="/notice"><i class="uil uil-angle-right-b"></i></a></dt>
     </dl>
   </div>
   <!-- 비주얼 영역 끝 -->
-
-
-
-  <div class="content">
-
-  
+  <div class="content">  
     <!-- 타이틀 -->
     <div class="title-area">
       <p><span></span></p>

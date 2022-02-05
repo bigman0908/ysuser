@@ -12,6 +12,8 @@ import QnaList from '../views/qna/qnaList.vue'
 import QnaRegist from '../views/qna/qnaRegist.vue'
 import QnaChk from '../views/qna/qnaChk.vue'
 import QnaView from '../views/qna/qnaView.vue'
+import NoticeList from '../views/notice/noticeList.vue'
+import NoticeView from '../views/notice/noticeView.vue'
 
 const routes = [
   {
@@ -73,6 +75,16 @@ const routes = [
     path: '/qnaView',
     name: 'qnaView',
     component: QnaView
+  },
+  {
+    path: '/notice',
+    name: 'notice',
+    component: NoticeList
+  },
+  {
+    path: '/noticeView',
+    name: 'noticeView',
+    component: NoticeView
   }
 ]
 

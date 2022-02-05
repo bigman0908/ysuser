@@ -2,9 +2,9 @@
   <!-- 비주얼 영역 -->
   <div class="visual-sub vs-bg05">
     <dl class="vs-copy">
-      <dt><a href="../gallery/gallery.html"><i class="uil uil-angle-left-b"></i></a></dt>
+      <dt><a href="/gallery"><i class="uil uil-angle-left-b"></i></a></dt>
       <dd>질문과답변</dd>
-      <dt><a href="../main/index.html"><i class="uil uil-angle-right-b"></i></a></dt>
+      <dt><a href="/notice"><i class="uil uil-angle-right-b"></i></a></dt>
     </dl>
   </div>
   <!-- 비주얼 영역 끝 -->
@@ -36,6 +36,7 @@
               </select-->
               <input type="password" title="비밀번호" value="" ref="password" v-model="PASSWORD" @keyup.enter="goQnaChk" autocomplete="new-password" class="w70p" placeholder="개시글 작성시 입력한 비밀번호를 입력해 주세요." />
               <input type="submit" name="passChk" value="확인" class="btn-grey-b" title="확 인" @click="goQnaChk" />
+              <input type="submit" name="passChk" value="취소" class="btn-grey-b" title="취 소" @click="this.$router.push({ name: 'qnaList', params:{}})" />
             </td>
           </tr>
         </table>
