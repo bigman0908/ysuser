@@ -57,12 +57,10 @@
     </dl>
     <!-- 리스트정보 끝 -->
 
-
-    <!-- 리스트 v-show="qna.REPLY_CNT != 1" -->
-
+    <!-- 리스트 -->
     <div class="board-list">
       <div v-show="qnaList.length > 0">
-        <ul :key="i" v-for="(qna,i) in pageList" @click="goQnaChk(qna.QNA_SEQ)">
+        <ul :key="i" v-for="(qna,i) in pageList" @click="goQnaChk(qna)">
           <li>{{qna.ROWNUM}}</li>          
           <li :class="[qna.LVL == '1' ? 'reply' : '']">
             <i v-show="qna.LVL == '1'" class="uil uil-corner-down-right"></i>
@@ -118,8 +116,20 @@ export default {
                 console.log("error=="+e)
             }            
         },
-        goQnaChk(qna_seq) {
-            this.$router.push({path:'/qnaChk', query:{qna_seq:qna_seq}}); 
+        goQnaChk(qna) {
+          let isView =  false;
+          //공개이거나 답글이면 바로 뷰페이지로 
+          if(qna.PUBLIC_YN == 'Y'){
+            isView = true;
+          }
+          if(isView){
+            this.$router.push({name:'qnaView', params:{ qna_seq:qna.QNA_SEQ }});
+          }else{
+            if(qna.REPLY_CNT == 2 && qna.LVL == 1){
+              isView = true;
+            }
+            this.$router.push({name:'qnaChk', params:{ qna_seq:qna.QNA_SEQ, parent_seq:qna.PARENT_SEQ, isView:isView}}); 
+          }
         },
         listPagingSet(data){
           this.pageList=this.qnaList.slice(data[0], data[1]);

@@ -79,7 +79,7 @@ export default {
             FILE_NM : "",
             VIEW_CNT : 0
           },
-          gallery_seq : this.$route.query.gallery_seq,
+          gallery_seq : this.$route.params.gallery_seq,
           galleryList: [],
           pageList: [],
           editor: ClassicEditor,
@@ -88,10 +88,12 @@ export default {
         };
     },
     created() {
-        this.goViewUpdate();
-        this.getInfo();
-        this.goList(); 
+      this.goViewUpdate();
     },    
+    mounted() {
+      this.getInfo();
+      this.goList(); 
+    },
     methods: {
         onReady( editor )  {
           const toolbarElement = editor.ui.view.toolbar.element;

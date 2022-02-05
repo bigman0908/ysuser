@@ -73,7 +73,7 @@ export default {
             }            
         },
         goView(gallery_seq) {
-            this.$router.push({path:'/galleryView', query:{gallery_seq:gallery_seq}}); 
+            this.$router.push({name:'galleryView', params:{gallery_seq:gallery_seq}}); 
         },
         
         listPagingSet(data){

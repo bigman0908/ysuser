@@ -52,8 +52,14 @@ export default {
     components: {PageComponent},
     data() {
         return {
-            PASSWORD: ""
+            PASSWORD: "",
+            qna_seq : this.$route.params.qna_seq,
+            parent_seq : this.$route.params.parent_seq,
+
         };
+    },
+    created(){
+      console.log("parent_seq=="+this.parent_seq);
     },
     methods: {
       async goQnaChk() {
@@ -62,10 +68,15 @@ export default {
           this.$refs.password.focus();
           return 
         }
-        let qnaInfo = await this.$api("/api/qnaChk",{param:[this.$route.query.qna_seq, this.PASSWORD]});
-        console.log("qnaInfo[0]=="+qnaInfo[0]);      
+        let qnaInfo = await this.$api("/api/qnaChk",{param:[this.parent_seq, this.PASSWORD]}); 
+        console.log("isView=="+this.$route.params.isView );    
         if(qnaInfo[0]) {
-          this.$router.push({ path: '/qnaUpdate' , query:{qna_seq: this.$route.query.qna_seq}})
+          if(!this.$isEmpty(this.$route.params.isView) && this.$route.params.isView=='true'){
+            this.$router.push({name:'qnaView', params:{ qna_seq:this.qna_seq }});
+          }else{
+            this.$router.push({ name: 'qnaUpdate' , params:{qna_seq: this.qna_seq}})
+          }
+
           window.scrollTo({top:100, behavior:'smooth'})
         }else{
           this.$swal('비밀번호 확인에 실패하였습니다.\n\n비밀번호를 확인해주세요.')

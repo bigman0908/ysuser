@@ -67,9 +67,9 @@
         </dd>
       </dl -->
       <div>
-        <a href="#" v-show="$route.path=='/qnaRegist'" class="btn-purple w120" @click="qnaInsert">등록</a>
-        <a href="#" v-show="$route.path=='/qnaUpdate'" class="btn-purple w120" @click="qnaInsert">수정</a>
-        <a href="#" v-show="$route.path=='/qnaUpdate'" class="btn-purple w120" @click="goDelete">삭제</a>
+        <a href="#" v-show="$route.name=='qnaRegist'" class="btn-purple w120" @click="qnaInsert">등록</a>
+        <a href="#" v-show="$route.name=='qnaUpdate'" class="btn-purple w120" @click="qnaInsert">수정</a>
+        <a href="#" v-show="$route.name=='qnaUpdate'" class="btn-purple w120" @click="goDelete">삭제</a>
         <a href="#" class="btn-dark w120" @click="goToList">목록</a>
       </div>
     </div>
@@ -94,11 +94,13 @@ export default {
             CONTENTS: "",
             FILE_NM: "",
             REG_ID: "",
-            LVL : 0
+            LVL : 0,
+            REPLY_CNT : ""
           },
           upFileNm : "",
           fileData : [],
           fileChk : false,
+          existFile : "",
           editor: ClassicEditor,
           editorData: '',
           editorConfig: {
@@ -109,13 +111,13 @@ export default {
         };
     },
     mounted() {
-      if(this.$route.path=="/qnaUpdate"){
+      if(this.$route.name=="qnaUpdate"){
         this.getQnaInfo();
       }
     },    
     methods: {
       MyCustomUploadAdapterPlugin(editor) {
-        //console.log("이값나오나시험=="+this.$route.query.qna_seq);
+        //console.log("이값나오나시험=="+this.$route.params.qna_seq);
         editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
             return new UploadAdapter(loader)
         }
@@ -124,19 +126,22 @@ export default {
         if(this.fileData.length>0){
           this.$api("/upload/deleteFile",{param:[this.fileData, "files"]}); //저장안된 이미지파일 삭제 요청              
         }
-        this.$router.push({path:'/qna'}); 
+        this.$router.push({name:'qnaList',"params":{}}); 
       },   
       async getQnaInfo() {
-        let qnaInfo = await this.$api("/api/qnaInfo",{param:[this.$route.query.qna_seq]});
-        console.log("qnaInfo[0]=="+qnaInfo[0]);      
+        let qnaInfo = await this.$api("/api/qnaInfo",{param:[this.$route.params.qna_seq]});
+        console.log("qnaInfo[0]=="+JSON.stringify(qnaInfo[0]));      
         if(qnaInfo.length > 0) {
           this.qna = qnaInfo[0];
           this.upFileNm = this.qna.FILE_NM;
+          this.existFile = this.qna.FILE_NM;
           if(!this.$isEmpty(this.qna.FILE_NM)){
             this.fileChk=true;
           }          
           this.editorData=this.qna.CONTENTS;
           this.qna.PASSWORD="";
+        }else{
+          this.$swal("잘못된 접근입니다.", this.$router.push({name:'qnaList', params:{}})) 
         }
       },
       qnaInsert() {
@@ -163,7 +168,13 @@ export default {
             delFiles.push(this.fileData[i]);
           }
         }
-        if(this.$route.path=="/qnaRegist"){                    
+        //기존업로드 파일 체크해서 삭제
+        if(!this.existFile){
+          if(this.existFile != this.qna.FILE_NM){
+            delFiles.push(this.existFile);
+          }
+        }
+        if(this.$route.name=="qnaRegist"){                    
           this.$swal.fire({
             title: '정말 등록 하시겠습니까?',
             showCancelButton: true,
@@ -172,20 +183,20 @@ export default {
           }).then(async (result) => {
             if(result.isConfirmed) {
               try{              
-                if(this.$route.path=="/qnaRegist"){
+                if(this.$route.name=="qnaRegist"){
                   let parentSeq = await this.$api("/api/qnaParentSeq",{param:""});
                   console.log("parentSeq=="+parentSeq[0].PARENT_SEQ);
                   this.qna.PARENT_SEQ = parentSeq[0].PARENT_SEQ;
                 }
                 setTimeout(() => {
-                  if(this.$route.path=="/qnaRegist"){
+                  if(this.$route.name=="qnaRegist"){
                     this.$api("/api/qnaInsert",{param:[this.qna]});
                   }
                   this.$swal.fire('저장되었습니다!', '', 'success');
                   if(delFiles.length>0){
                     this.$api("/upload/deleteFile",{param:[delFiles, "files"]}); //저장안된 파일 삭제 요청              
                   }
-                  this.$router.push({path:'/qna'});
+                  this.$router.push({name:'qnaList'});
                   window.scrollTo({top:100, behavior:'smooth'});
                 }, 300);
               }catch(e){
@@ -202,13 +213,12 @@ export default {
           }).then(async (result) => {
             if(result.isConfirmed) {
               try{
-                this.qna.QNA_SEQ = this.$route.query.qna_seq;
                 await this.$api("/api/qnaUpdate",{param:[this.qna]});
                 this.$swal.fire('저장되었습니다!', '', 'success');
                 if(delFiles.length>0){
                     this.$api("/upload/deleteFile",{param:[delFiles, "files"]}); //저장안된 이미지파일 삭제 요청              
                 }
-                this.$router.push({path:'/qna'});
+                this.$router.push({name:'qnaList'});
                 window.scrollTo({top:100, behavior:'smooth'});
               }catch(e){
                 console.log("error=="+e);
@@ -218,18 +228,24 @@ export default {
         }
       },
       goDelete() {       
+        var msg = "";          
+        if(this.qna.LVL==0 && this.qna.REPLY_CNT==2){
+          msg = "해당 글은 답변이 존재합니다\n\n삭제시 답변도 같이 삭제됩니다.\n\n삭제하시겠습니까?";
+        }else{
+          msg = "삭제하시겠습니까?"
+        }
+
         this.$swal.fire({
-            title: '정말 삭제하시겠습니까?',
+            title: msg,
             showCancelButton: true,
             confirmButtonText: `삭제`,
             cancelButtonText: `취소`
         }).then(async (result) => {
             if (result.isConfirmed) {
-              console.log(this.$route.query.qna_seq)
-              await this.$api("/api/qnaDelete",{param:[this.qna.WRITER, this.$route.query.qna_seq]});
+              await this.$api("/api/qnaDelete",{param:[this.qna.WRITER, this.qna.QNA_SEQ]});
               this.upFileDel();
               this.$swal.fire('삭제되었습니다!', '', 'success')
-              this.$router.push({path:'/qna'});
+              this.$router.push({name:'qnaList'});
               window.scrollTo({top:100, behavior:'smooth'});
             } 
         });
