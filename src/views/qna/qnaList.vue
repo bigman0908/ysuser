@@ -124,6 +124,7 @@ export default {
           }
           if(isView){
             this.$router.push({name:'qnaView', params:{ qna_seq:qna.QNA_SEQ }});
+            window.scrollTo({top:100, behavior:'smooth'});
           }else{
             if(qna.REPLY_CNT == 2 && qna.LVL == 1){
               isView = true;

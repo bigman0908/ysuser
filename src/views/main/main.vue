@@ -75,31 +75,3 @@
   </div>
 </div>
 </template>
-<script>
-export default {
-  
-  name: 'main',
-  data () {
-    return {
-      imgWidth: '0',
-      sliders : [],
-      animation : "random",
-      delay : 7000
-    }
-  },
-  created() {
-    this.imgWidth = "100%"
-    console.log("여기왜 안찍힘??==="+this.imgWidth);
-  },
-  mounted() {
-    setTimeout(() => {
-      this.imgWidth = "120"
-    },500);
-    let options = [];
-    //options.push({"slides":[{"src":"../../assets/images/main_visual_img01.jpg"},{"src":"../../assets/images/main_visual_img02.jpg"},{"src":"../../assets/images/main_visual_img03.jpg"}],"animation":"kenburns","delay":7000});
-    //let _vegas = new Vegas(this, options);
-    console.log("여기왜 안찍힘2222==="+this.imgWidth);
-
-  }
-}
-</script>

@@ -104,6 +104,7 @@ export default {
     },
     goDetail(notice_seq){
       this.$router.push({name:'noticeView', params:{notice_seq:notice_seq}}); 
+      window.scrollTo({top:100, behavior:'smooth'});
     },
     listPagingSet(data){
       this.pageList=this.noticeList.slice(data[0], data[1]);

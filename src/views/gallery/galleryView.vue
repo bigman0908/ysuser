@@ -116,6 +116,8 @@ export default {
           if(galleryInfo.length > 0) {
             this.gallery = galleryInfo[0];
             this.editorData = this.gallery.CONTENTS;
+          }else{
+            this.$swal("잘못된 접근입니다.", this.$router.push({name:'galleryList', params:{}})) 
           }
         },
         async goView(gallery_seq) {

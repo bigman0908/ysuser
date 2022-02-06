@@ -74,6 +74,7 @@ export default {
         },
         goView(gallery_seq) {
             this.$router.push({name:'galleryView', params:{gallery_seq:gallery_seq}}); 
+            window.scrollTo({top:100, behavior:'smooth'});
         },
         
         listPagingSet(data){
