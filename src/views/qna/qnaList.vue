@@ -8,8 +8,6 @@
     </dl>
   </div>
   <!-- 비주얼 영역 끝 -->
-
-
   <div class="content">
     <!-- 타이틀 -->
     <div class="title-area">
@@ -17,7 +15,6 @@
       <h2>궁금한 사항이 있으면 언제든 질문하세요~</h2>
     </div>
     <!-- 타이틀 끝 -->
-
     <!-- 검색 -->
     <fieldset>
       <legend>게시물 검색</legend>
@@ -42,8 +39,6 @@
       </div>
     </fieldset>
     <!-- 검색 끝 -->
-
-
     <!-- 리스트정보 -->
     <dl class="board-list-info">
       <dt>
@@ -61,7 +56,7 @@
     <div class="board-list">
       <div v-show="qnaList.length > 0">
         <ul :key="i" v-for="(qna,i) in pageList" @click="goQnaChk(qna)">
-          <li>{{qna.ROWNUM}}</li>          
+          <li>{{qna.ROWNUM}}</li>
           <li :class="[qna.LVL == '1' ? 'reply' : '']">
             <i v-show="qna.LVL == '1'" class="uil uil-corner-down-right"></i>
             {{qna.SUBJECT}}
@@ -74,7 +69,7 @@
             <span v-show="qna.REPLY_CNT == 2 && qna.LVL == 0" style="color:#8950fc;">[답변완료]</span>
             <span v-show="qna.REPLY_CNT == 2 && qna.LVL == 1" style="color:#d60028;">[답변]</span>
           </li>
-        </ul>        
+        </ul>
       </div>
       <div v-show="qnaList.length==0" class="board-list-no">
         <p><i class="uil uil-sync-exclamation"></i></p>
@@ -93,52 +88,52 @@
 import PageComponent from '../../components/Pagination'
 
 export default {
-    components: {PageComponent},
-    data() {
-        return {
-          qnaList: [],
-          pageList: [],
-          keyword : '',
-          ttCnt : '0',
-          pageInfo : ''
-        };
-    },
-    created() {
-        this.goList(); 
-    },    
-    methods: {
-        async goList() {
-            try{
-                this.qnaList = await this.$api("/api/qnaList",{param:this.keyword});
-                console.log("this.qnaList=="+this.qnaList.length);
-                this.ttCnt=this.$currencyFormat(this.qnaList.length)
-            }catch(e){
-                console.log("error=="+e)
-            }            
-        },
-        goQnaChk(qna) {
-          let isView =  false;
-          //공개이거나 답글이면 바로 뷰페이지로 
-          if(qna.PUBLIC_YN == 'Y'){
-            isView = true;
-          }
-          if(isView){
-            this.$router.push({name:'qnaView', params:{ qna_seq:qna.QNA_SEQ }});
-            window.scrollTo({top:100, behavior:'smooth'});
-          }else{
-            if(qna.REPLY_CNT == 2 && qna.LVL == 1){
-              isView = true;
-            }
-            this.$router.push({name:'qnaChk', params:{ qna_seq:qna.QNA_SEQ, parent_seq:qna.PARENT_SEQ, isView:isView}}); 
-          }
-        },
-        listPagingSet(data){
-          this.pageList=this.qnaList.slice(data[0], data[1]);
-          this.currentPage=data[2]
-          //$currencyFormat (value, format = '#,###')
-          console.log("this.pageList=="+this.pageList.length);
-          this.pageInfo="["+data[2]+"/"+data[3]+"]"
-        }
+  components: { PageComponent },
+  data () {
+    return {
+      qnaList: [],
+      pageList: [],
+      keyword: '',
+      ttCnt: '0',
+      pageInfo: ''
     }
+  },
+  created () {
+    this.goList()
+  },
+  methods: {
+    async goList () {
+      try {
+        this.qnaList = await this.$api('/api/qnaList', { param:this.keyword })
+        console.log('this.qnaList=='+ this.qnaList.length)
+        this.ttCnt = this.$currencyFormat(this.qnaList.length)
+      } catch (e) {
+        console.log("error=="+e)
+      }            
+    },
+    goQnaChk(qna) {
+      let isView =  false;
+      //공개이거나 답글이면 바로 뷰페이지로 
+      if(qna.PUBLIC_YN == 'Y'){
+        isView = true;
+      }
+      if(isView){
+        this.$router.push({name:'qnaView', params:{ qna_seq:qna.QNA_SEQ }});
+        window.scrollTo({top:100, behavior:'smooth'});
+      }else{
+        if(qna.REPLY_CNT == 2 && qna.LVL == 1){
+          isView = true;
+        }
+        this.$router.push({name:'qnaChk', params:{ qna_seq:qna.QNA_SEQ, parent_seq:qna.PARENT_SEQ, isView:isView}}); 
+      }
+    },
+    listPagingSet(data){
+      this.pageList=this.qnaList.slice(data[0], data[1]);
+      this.currentPage=data[2]
+      //$currencyFormat (value, format = '#,###')
+      console.log("this.pageList=="+this.pageList.length);
+      this.pageInfo="["+data[2]+"/"+data[3]+"]"
+    }
+  }
 }
 </script>
