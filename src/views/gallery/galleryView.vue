@@ -83,7 +83,13 @@ export default {
           galleryList: [],
           pageList: [],
           editor: ClassicEditor,
-          editorData: ''
+          editorData: '',
+            editorConfig: {
+                // The configuration of the editor.
+                //toolbar: [ 'bold', 'italic', '|', 'link' ]   
+                allowedContent : true,      //class 적용됨
+                //CKEDITOR.dtd.$removeEmpty.span = 0;    //span 태그 적용됨
+            }
 
         };
     },
@@ -99,6 +105,7 @@ export default {
           const toolbarElement = editor.ui.view.toolbar.element;
           toolbarElement.style.display = 'none';
           editor.isReadOnly = true;
+          editor.allowedContent = true;
         },
         async goViewUpdate() {
           this.$api("/api/galleryViewUpdate",{param:[this.gallery_seq]});

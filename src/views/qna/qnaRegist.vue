@@ -106,7 +106,8 @@ export default {
           editorConfig: {
               // The configuration of the editor.
               //toolbar: [ 'bold', 'italic', '|', 'link' ]   
-              extraPlugins: [this.MyCustomUploadAdapterPlugin]            
+              extraPlugins: [this.MyCustomUploadAdapterPlugin],
+              placeholder: "개시글을 입력해보세요!"
           }
         };
     },
