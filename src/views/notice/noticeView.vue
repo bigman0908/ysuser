@@ -19,7 +19,7 @@
 
     <!-- 상세 -->
     <div class="board-view">
-      <h2><span>[Notice]</span> {{notice.SUBJECT}}</h2>
+      <h2><span>[News]</span> {{notice.SUBJECT}}</h2>
       <h3>
         <i class="uil uil-calendar-alt"></i> {{notice.REG_DT}}
         &nbsp; &nbsp;
