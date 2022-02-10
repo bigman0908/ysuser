@@ -243,7 +243,7 @@ export default {
             cancelButtonText: `취소`
         }).then(async (result) => {
             if (result.isConfirmed) {
-              await this.$api("/api/qnaDelete",{param:[this.qna.WRITER, this.qna.QNA_SEQ]});
+              await this.$api("/api/qnaDelete",{param:[this.qna.WRITER, this.qna.PARENT_SEQ]});
               this.upFileDel();
               this.$swal.fire('삭제되었습니다!', '', 'success')
               this.$router.push({name:'qnaList'});
