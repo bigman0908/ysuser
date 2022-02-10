@@ -12,9 +12,19 @@
       Copyright(c) Yonsel Nursing Academy.Co., Ltd. All Right Reserved.
     </li>
     <li>
-      <a href="#"><i class="uil uil-angle-up"></i></a>
+      <a @click="goAhead"><i class="uil uil-angle-up"></i></a>
     </li>
   </ul>
 </div>
 <!-- 하단영역 끝 -->
 </template>
+
+<script>
+export default {
+  methods: {
+    goAhead () {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+}
+</script>
