@@ -6,12 +6,12 @@
         <a href="/main"><img src="../assets/images/logo_black.svg" alt="" title="" /></a>
       </dt>
       <dd>
-        <a href="/about" :class="[$route.path.indexOf('about') > -1 ? 'active' : '']">학원소개</a>
-        <a href="/education" :class="[$route.path.indexOf('education') > -1 ? 'active' : '']">교육안내</a>
-        <a href="/exam" :class="[$route.path.indexOf('exam') > -1 ? 'active' : '']">시험안내</a>
-        <a href="/gallery" :class="[$route.path.indexOf('gallery') > -1 ? 'active' : '']">갤러리</a>
-        <a href="/qna" :class="[$route.path.indexOf('qna') > -1 ? 'active' : '']">질문과답변</a>
-        <a href="/notice" :class="[$route.path.indexOf('notice') > -1 ? 'active' : '']">공지사항</a>
+        <a href="/about" :class="this.$route.path.indexOf('about') > -1 ? 'active' : ''">학원소개</a>
+        <a href="/education" :class="this.$route.path.indexOf('education') > -1 ? 'active' : ''">교육안내</a>
+        <a href="/exam" :class="this.$route.path.indexOf('exam') > -1 ? 'active' : ''">시험안내</a>
+        <a href="/gallery" :class="this.$route.path.indexOf('gallery') > -1 ? 'active' : ''">갤러리</a>
+        <a href="/qna" :class="this.$route.path.indexOf('qna') > -1 ? 'active' : ''">질문과답변</a>
+        <a href="/notice" :class="this.$route.path.indexOf('notice') > -1 ? 'active' : ''">공지사항</a>
       </dd>
       <dt>
         <a href="#" id="tmOpen"><i class="uil uil-align-right"></i></a>
@@ -19,8 +19,6 @@
     </dl>
   </div>
   <!-- 상단영역 끝 -->
-
-
   <!-- 전체메뉴 -->
   <div class="header-total">
     <ul>

@@ -1,6 +1,7 @@
 const target = 'http://127.0.0.1:3001';
 
 module.exports = {
+  lintOnSave: false,
   devServer: {
     overlay: false,
     port: 8080,
