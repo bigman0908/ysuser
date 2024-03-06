@@ -4,6 +4,7 @@ module.exports = {
   devServer: {
     overlay: false,
     port: 8080,
+    lintOnSave: false,
     proxy: {
       '^/api': {
         target,
